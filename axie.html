@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script>
+
+//window.location="https://marketplace.axieinfinity.com/axie/?auctionTypes=Sale";
+    //
+
+ 
+//получаем доступ к сумме в виде строки и вырезаем число и превращаем в число
+let z = Number(getElementByXpath("/html/body/div[1]/div[1]/div[4]/div[2]/div/div/div/div[2]/div[1]/a/div/div/div/div[4]/h6").innerHTML.slice(1, 3));
+//кликаем на элемент если сумма норм
+if (z < 33) {
+    getElementByXpath("/html/body/div[1]/div[1]/div[4]/div[2]/div/div/div/div[2]/div[1]/a/div/div/div").click();
+    //клик после задержки
+    setTimeout(x, 1000);
+}
+//функция xpath для работы доступа по пути
+function getElementByXpath(path) {
+  return document.evaluate(path, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+}
+//функция клик покупки
+function x() {
+  return getElementByXpath("/html/body/div[1]/div[4]/div/div[2]/div[1]/div/div[3]/div/button").click();
+}
+ 
+
+</script>
+</body>
+</html>
